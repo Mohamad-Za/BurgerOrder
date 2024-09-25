@@ -1,0 +1,41 @@
+<%- include("./../partials/header.ejs") %>
+
+<h1>Orders for the Kitchen</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Burger</th>
+            <th>Ingredients</th>
+            <th>Quantity</th>
+            <th>Order Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (orders.length > 0) { %>
+            <% orders.forEach(order => { %>
+                <tr>
+                    <td><%= order.order_id %></td>
+                    <td><%= order.customer_name %></td>
+                    <td><%= order.burger_name %></td>
+                    <td><%= order.ingredients ? order.ingredients : 'No ingredients' %></td>
+                    <td><%= order.burger_quantity %></td>
+                    <td><%= new Date(order.order_date).toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' }) %></td>
+                    <td>
+                        <form action="/orders/delete/<%= order.order_id %>" method="POST" style="display:inline;">
+                            <button type="submit">Order Done</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="7">No orders found.</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<%- include("./../partials/footer.ejs") %>

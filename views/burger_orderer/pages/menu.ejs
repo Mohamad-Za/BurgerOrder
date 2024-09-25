@@ -1,0 +1,17 @@
+<%- include("./../partials/header.ejs") %>
+
+<h1>Our Menu</h1>
+
+<div class="menu-grid">
+  <% burgers.forEach(function(burger) { %>
+    <div class="menu-item">
+      <h2><%= burger.name %></h2>
+      <p><%= burger.description %></p>
+      <p><strong>Price:</strong> $<%= burger.price %></p>
+      <a href="/customize/<%= burger.id %>" class="btn">Customize & Order</a>
+    </div>
+  <% }); %>
+</div>
+
+<%- include("./../partials/footer.ejs") %>
+
