@@ -1,0 +1,22 @@
+<%- include("./../partials/header.ejs") %>
+
+<div class="about-container">
+    <h1>About BurgerOrderer</h1>
+    <p>
+        BurgerOrderer is a collaborative project built by five developers. Our goal is to make burger ordering 
+        quick, simple, and customizable. Check out our GitHub profiles below to learn more about each team member.
+    </p>
+
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+        <% team.forEach(function(member) { %>
+            <div class="team-member">
+                <img src="<%= member.avatarUrl %>" alt="<%= member.name %> Avatar" class="team-avatar">
+                <h3><%= member.name %></h3>
+                <a href="<%= member.githubUrl %>" target="_blank" class="btn btn-github">GitHub Profile</a>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<%- include("./../partials/footer.ejs") %>

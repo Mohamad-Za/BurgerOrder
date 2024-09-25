@@ -1,0 +1,24 @@
+<%- include("./../partials/header.ejs") %>
+
+<div class="confirmation-container">
+    <h1>Thank You, <%= customerName %>!</h1>
+    <p>Your order has been placed and is being prepared. Below are your order details:</p>
+
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <p><strong>Burger:</strong> <%= burger.name %></p>
+        <p><strong>Ingredients:</strong></p>
+        <ul class="ingredients-list">
+            <% if (ingredients.length > 0) { %>
+                <% ingredients.forEach(function(ingredient) { %>
+                    <li><%= ingredient.name %></li>
+                <% }); %>
+            <% } else { %>
+                <li>No ingredients selected.</li>
+            <% } %>
+        </ul>
+    </div>
+
+    <a href="/" class="btn btn-center">Back to Menu</a>
+</div>
+<%- include("./../partials/footer.ejs") %>

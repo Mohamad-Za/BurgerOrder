@@ -1,0 +1,82 @@
+<%- include("./../partials/header.ejs") %>
+
+
+<div class="customize-container">
+  <h1>Customize Your <%= burger.name %></h1>
+
+  <p>Modify your <strong><%= burger.name %></strong> to match your taste preferences. Add or remove ingredients, and adjust the quantity as needed.</p>
+
+  <form action="/order" method="POST" class="customize-form">
+      <input type="hidden" name="burgerId" value="<%= burger.id %>">
+
+      <!-- Customer Name -->
+      <div class="form-group">
+          <label for="customerName">Your Name:</label>
+          <input type="text" name="customerName" required placeholder="Enter your name">
+      </div>
+
+      <!-- Quantity -->
+      <div class="form-group quantity-group">
+          <label for="quantity">Quantity:</label>
+          <div class="quantity-buttons">
+              <button type="button" class="btn-quantity" id="decrease-btn">-</button>
+              <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
+              <button type="button" class="btn-quantity" id="increase-btn">+</button>
+          </div>
+      </div>
+
+      <!-- Remove Ingredients -->
+      <div class="form-group">
+          <h2>Remove Ingredients</h2>
+          <div class="ingredients-list">
+              <% defaultIngredients.forEach(function(ingredient) { %>
+                  <div class="ingredient-item">
+                      <label>
+                          <input type="checkbox" name="ingredientIds" value="<%= ingredient.id %>" checked>
+                          <span><%= ingredient.name %></span>
+                      </label>
+                  </div>
+              <% }); %>
+          </div>
+      </div>
+
+      <!-- Add Ingredients -->
+      <div class="form-group">
+          <h2>Add Ingredients</h2>
+          <div class="ingredients-list">
+              <% allIngredients.forEach(function(extraIngredient) { %>
+                  <% if (!defaultIngredients.find(i => i.id === extraIngredient.id)) { %>
+                      <div class="ingredient-item">
+                          <label>
+                              <input type="checkbox" name="extraIngredientIds" value="<%= extraIngredient.id %>">
+                              <span><%= extraIngredient.name %> (+$<%= extraIngredient.extra_price %>)</span>
+                          </label>
+                      </div>
+                  <% } %>
+              <% }); %>
+          </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+          <input type="submit" value="Place Order" class="btn btn-submit">
+      </div>
+  </form>
+</div>
+
+<script>
+  // Handle the quantity buttons
+  document.getElementById('increase-btn').addEventListener('click', function() {
+      let quantity = document.getElementById('quantity');
+      quantity.value = parseInt(quantity.value) + 1;
+  });
+
+  document.getElementById('decrease-btn').addEventListener('click', function() {
+      let quantity = document.getElementById('quantity');
+      if (parseInt(quantity.value) > 1) {
+          quantity.value = parseInt(quantity.value) - 1;
+      }
+  });
+</script>
+
+<%- include("./../partials/footer.ejs") %>
