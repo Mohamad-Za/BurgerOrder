@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar with logo and links -->
+    <header class="navbar-container">
+        <!-- Logo on the left in the navbar -->
+        <div class="logo-nav">
+            <a href="/">
+                <img src="/images/logo.png" alt="BurgerOrderer Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Navbar links on the right -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="/about" class="<%= title === 'About' ? 'active' : '' %>">About</a></li>
+                <li><a href="/" class="<%= title === 'Menu' ? 'active' : '' %>">Menu</a></li>
+                <li><a href="/orders" class="<%= title === 'Orders' ? 'active' : '' %>">Kitchen View</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
