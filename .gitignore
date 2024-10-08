@@ -13,11 +13,9 @@ npm-debug.log*
 .env
 
 # Docker-related files
-db_data/
-docker-compose.override.yml
-Dockerfile.kitchen
-Dockerfile.menu
-*.tar
+
+
+
 
 # Operating system files
 .DS_Store
