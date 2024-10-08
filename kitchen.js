@@ -13,12 +13,12 @@ app.set('view engine', 'ejs');
 
 app.use('/', kitchenRoutes);
 
-app.use((err, req, res, next) => {
+app.use((err, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
 
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Kitchen server is running on http://localhost:${kitchenPort}`);
+    console.log(`Kitchen server is running on http://localhost:${port}`);
 });

@@ -39,6 +39,11 @@ services:
       MYSQL_USER: dbadm
       MYSQL_PASSWORD: P@ssw0rd
     volumes:
-      - ./db_data:/var/lib/mysql  # Persisting database data on the host
+      - ./db_data:/var/lib/mysql  # Persisting database data
+      - ./sql/burger_orderer/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql  # Mount DDL SQL for table creation
+      - ./sql/burger_orderer/insert.sql:/docker-entrypoint-initdb.d/insert.sql  # Mount Insert SQL for initial data
+      - ./sql/burger_orderer/procedures.sql:/docker-entrypoint-initdb.d/procedures.sql  # Mount Stored Procedures SQL
+      - ./sql/burger_orderer/reser.sql:/docker-entrypoint-initdb.d/reset.sql  # Mount Stored Procedures SQL
+      - ./sql/burger_orderer/setup.sql:/docker-entrypoint-initdb.d/setup.sql  # Additional setup SQL
     ports:
       - "3306:3306"  # Exposing MariaDB's port for external connections (optional)
