@@ -1,5 +1,5 @@
 {
-    "host":     "LAPTOP-41P19MFQ",
+    "host":     "mariadb",
     "user":     "dbadm",
     "password": "P@ssw0rd",
     "database": "burger_orderer",

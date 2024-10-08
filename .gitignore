@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Docker-related files
+db_data/
+docker-compose.override.yml
+Dockerfile.kitchen
+Dockerfile.menu
+*.tar
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# IDE/Editor files
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# Coverage directories
+coverage/
+.nyc_output/
+
+# Build files
+dist/
+build/

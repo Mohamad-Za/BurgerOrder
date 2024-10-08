@@ -1,0 +1,44 @@
+version: '3'
+services:
+  # Kitchen App
+  kitchen-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.kitchen  # Specify the Dockerfile for kitchen app
+    ports:
+      - "3000:3000"  # Map the container port to the host
+    environment:
+      DB_HOST: mariadb
+      DB_USER: dbadm
+      DB_PASSWORD: P@ssw0rd
+      DB_NAME: burger_orderer
+    depends_on:
+      - mariadb
+
+  # Menu App
+  menu-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.menu  # Specify the Dockerfile for menu app
+    ports:
+      - "4000:4000"  # Map the container port to the host
+    environment:
+      DB_HOST: mariadb
+      DB_USER: dbadm
+      DB_PASSWORD: P@ssw0rd
+      DB_NAME: burger_orderer
+    depends_on:
+      - mariadb
+
+  # MariaDB Database
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: burger_orderer
+      MYSQL_USER: dbadm
+      MYSQL_PASSWORD: P@ssw0rd
+    volumes:
+      - ./db_data:/var/lib/mysql  # Persisting database data on the host
+    ports:
+      - "3306:3306"  # Exposing MariaDB's port for external connections (optional)

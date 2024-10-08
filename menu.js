@@ -18,7 +18,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
-const port = 1337;
+const port = 4000;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
