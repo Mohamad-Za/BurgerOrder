@@ -24,7 +24,6 @@ router.get('/about', (req, res, next) => {
 
 // Global error handler
 app.use((err, req, res, next) => {
-    console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
 
@@ -44,7 +43,6 @@ router.get('/orders', async (req, res, next) => {
         data.orders = await cli.showOrderDetails();
         res.render('burger_orderer/pages/orders', data);
     } catch (error) {
-        console.error("Error fetching orders:", error);
         next(error);
     }
 });
@@ -55,9 +53,9 @@ router.post('/orders/delete/:id', async (req, res, next) => {
 
     try {
         await cli.deleteOrder(orderId);  
-        res.redirect('/orders');  
+        res.status(200).redirect('/orders');  
     } catch (error) {
-        console.error("Error deleting order:", error);
+        res.status(500).send("Failed to delete order");
         next(error);
     }
 });
