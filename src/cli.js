@@ -98,12 +98,7 @@ async function showOrderDetails() {
 
 
 
-async function deleteOrder(orderId) {
-    const db = await mysql.createConnection(config);
-    let sql = `DELETE FROM orders WHERE id = ?`;
 
-    await db.query(sql, [orderId]);
-}
 
 
 async function getBurgerIngredients(burgerId) {
