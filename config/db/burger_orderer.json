@@ -1,5 +1,5 @@
 {
-    "host":     "MSI",
+    "host":     "mariadb",
     "user":     "dbadm",
     "password": "P@ssw0rd",
     "database": "burger_orderer",
