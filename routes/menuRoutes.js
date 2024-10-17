@@ -1,9 +1,6 @@
-
 const express = require('express');
 const router = express.Router();
 const cli = require('../src/cli');
-const app = express();
-
 
 router.get('/about', (req, res) => {
     let data = {};
@@ -17,27 +14,19 @@ router.get('/about', (req, res) => {
         { name: "Member 5", githubUrl: "https://github.com/member5-profile", avatarUrl: "https://github.com/member5-profile.png" }
     ];
 
-    res.render('burger_orderer/pages/about', data);
+    res.status(200).render('burger_orderer/pages/about', data);
 });
-
-
 
 router.get('/', async (req, res, next) => {
     try {
         let data = {};
         data.title = "menu";
         data.burgers = await cli.showBurgers();
-        res.render('burger_orderer/pages/menu', data);
+        res.status(200).render('burger_orderer/pages/menu', data);
     } catch (err) {
         next(err);  
     }
 });
-
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong!');
-});
-
 
 router.get('/customize/:id', async (req, res) => {
     let data = {};
@@ -48,26 +37,21 @@ router.get('/customize/:id', async (req, res) => {
     data.defaultIngredients = await cli.getBurgerIngredients(burgerId); 
     data.allIngredients = await cli.showIngredients(); 
     data.title = `Customize ${data.burger.name}`;
-
-    res.render('burger_orderer/pages/customize', data);
+    
+    res.status(200).render('burger_orderer/pages/customize', data);
 });
-
-
-
 
 router.get('/thankyou', (req, res) => {
     let data = {};
     data.title = "thank you";
-    res.render('burger_orderer/pages/thankyou', data);
+    res.status(200).render('burger_orderer/pages/thankyou', data);
 });
-
 
 router.post('/order', async (req, res) => {
     const { customerName, burgerId, ingredientIds, extraIngredientIds, quantity } = req.body;
 
     try {
         const orderId = await cli.insertOrder(customerName);
-
         await cli.insertOrderItem(orderId, burgerId, quantity || 1);  
 
         let selectedIngredients = [];
@@ -89,7 +73,7 @@ router.post('/order', async (req, res) => {
 
         const burger = await cli.getBurgerById(burgerId);
 
-        res.render('burger_orderer/pages/thankyou', {
+        res.status(200).render('burger_orderer/pages/thankyou', {
             title: 'Thank You',
             burger: burger,
             ingredients: selectedIngredients,
@@ -100,7 +84,5 @@ router.post('/order', async (req, res) => {
         res.status(500).send("Failed to process order.");
     }
 });
-
-
 
 module.exports = router;

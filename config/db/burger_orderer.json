@@ -1,7 +1,7 @@
 {
-    "host":     "MSI",
-    "user":     "dbadm",
-    "password": "P@ssw0rd",
+    "host":     "localhost",
+    "user":     "senai-amn",
+    "password": "your_password",
     "database": "burger_orderer",
     "multipleStatements": true
 }
