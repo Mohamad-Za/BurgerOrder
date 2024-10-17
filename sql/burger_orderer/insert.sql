@@ -68,3 +68,4 @@ INSERT INTO burger_ingredients (burger_id, ingredient_id, quantity) VALUES
 (5, 8, 1),  -- Onion Rings
 (5, 7, 1),  -- BBQ Sauce
 (5, 10, 1); -- Pickles
+

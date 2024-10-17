@@ -59,4 +59,4 @@ CREATE TABLE IF NOT EXISTS order_ingredients (
 
 
 -- Source any additional SQL procedures
-SOURCE procedures.sql;
+-- SOURCE procedures.sql;

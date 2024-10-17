@@ -1,5 +1,5 @@
-source setup.sql
+SOURCE /mariadb-scripts/setup.sql;
 
-source ddl.sql
+SOURCE /mariadb-scripts/ddl.sql;
 
-source insert.sql
+SOURCE /mariadb-scripts/insert.sql;
