@@ -1,7 +1,7 @@
 {
-    "host":     "localhost",
-    "user":     "senai-amn",
-    "password": "your_password",
+    "host":     "mariadb",
+    "user":     "dbadm",
+    "password": "P@ssw0rd",
     "database": "burger_orderer",
     "multipleStatements": true
 }

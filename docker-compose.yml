@@ -1,22 +1,46 @@
-version: '3.8'
-
+version: '3.9'
 services:
-  db:
-    image: mariadb:latest
+  mariadb:
+    image: mariadb:11.5.2
+    container_name: burger_mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: dbadm
+      MYSQL_PASSWORD: P@ssw0rd
       MYSQL_DATABASE: burger_orderer
-      MYSQL_USER: senai-amn
-      MYSQL_PASSWORD: your_password
-    volumes:
-      - ./db_data:/var/lib/mysql  # Persisting database data
-      - ./sql/burger_orderer/setup.sql:/docker-entrypoint-initdb.d/setup.sql  # Additional setup SQL
-      - ./sql/burger_orderer/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql  # Additional setup SQL
-      - ./sql/burger_orderer/insert.sql:/docker-entrypoint-initdb.d/insert.sql  # Additional setup SQL
     ports:
-      - "3306:3306"  # Exposing MariaDB's port for external connections
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      - "3306:3306"
+    volumes:
+      - ./sql/burger_orderer/reset.sql:/docker-entrypoint-initdb.d/reset.sql
+      - ./sql/burger_orderer:/mariadb-scripts
+    command: ['mariadbd', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+
+  kitchen:
+    build:
+      context: .
+    container_name: kitchen_service
+    environment:
+      DB_HOST: mariadb
+      DB_USER: dbadm
+      DB_PASSWORD: P@ssw0rd
+      DB_NAME: burger_orderer
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mariadb
+    command: ["node", "./kitchen.js"]
+
+  menu:
+    build:
+      context: .
+    container_name: menu_service
+    environment:
+      DB_HOST: mariadb
+      DB_USER: dbadm
+      DB_PASSWORD: P@ssw0rd
+      DB_NAME: burger_orderer
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mariadb
+    command: ["node", "./menu.js"]
