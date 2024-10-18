@@ -1,18 +1,21 @@
 Reflection 1
-Part 1: Introduction/Initial Thoughts
-Purpose and Objectives: Start by explaining the purpose of the work you were doing. What was the main task or goal you set out to accomplish? How did you initially approach the project?
-For example: "At the beginning of the project, my main focus was to set up the database connection. I expected this to be straightforward but soon realized that there were many configuration settings that required deeper understanding."
-Expectations: Discuss what you thought would be easy or difficult before you started.
-Example: "I assumed that integrating the database with the web application would be seamless, but I anticipated some minor issues with Docker configuration."
-Part 2: Development/Process
-Steps Taken: This is where you explain the actual steps you took during the work. Break it down into specific actions. What did you do first, and why?
-Example: "I began by setting up a PostgreSQL database and used the Sequelize ORM for database interaction. This required some research, as I hadn’t worked much with Sequelize before. After reading the official documentation, I created models to represent the orders in the kitchen."
-Challenges Faced: Reflect on the challenges or obstacles you encountered. What didn’t go according to plan, and how did you handle it?
-Example: "The main challenge was setting up the Docker container. At first, the container wouldn’t connect to the PostgreSQL database. After several failed attempts, I realized the issue was with the network configuration in Docker Compose, which required me to reconfigure the ports and dependencies."
-Part 3: Conclusion/Outcome
-Results: Summarize what you were able to achieve by the end of this stage of the project. Did you accomplish your initial goal? Did you have to adjust your plan?
 
-Example: "By the end of this stage, I successfully established a working connection between the application and the database. However, I had to rethink parts of my original strategy, especially concerning container orchestration."
-Reflection on Learning: Reflect on what you learned from this part of the project. How has it improved your knowledge or skills?
+Part 1: Regular Contributions
+Team Engagement: During the initial phase of the project, each team member was actively involved in contributing. We ensured that more than 40% of the team members made multiple commits as we progressed through each task.
+Contribution Example: On 2024-09-25, each team member made their first commit to the project. This was the start of our version control process using GitHub. We ensured that each section of the project was covered, from backend development to UI adjustments.
+Collaboration Strategy: We divided the tasks to ensure that everyone contributed to different parts of the project, from setting up the database to building the frontend views.
 
-Example: "Through trial and error, I gained a much deeper understanding of Docker’s networking configuration, which will help in future projects."
+Part 2: Well Described Commits
+Commit Descriptions: We placed emphasis on writing clear and descriptive commit messages to make our version control process more transparent. This allowed us to keep track of changes efficiently.
+Commit Example: On 2024-09-28, I pushed the changes for the kitchen view. My commit message was "Delade upp Kitchen View i en separat applikation och skapade index.js", which clearly describes the work I completed.
+Commit Process: I followed a structured approach for commits, including adding files to staging with git add ., writing meaningful messages with git commit -m, and pushing changes to the remote repository using git push. This ensured every change was documented and easy to understand.
+
+Part 3: Branches
+Branch Usage: While working on the project, we utilized branches to manage different parts of the application. For example, I created a feature branch specifically for the development of the kitchen view.
+Branching Example: I created the branch feature/kitchen-view to isolate the work on the kitchen interface without affecting the main codebase. After completing the feature, I merged it back into the main branch using git merge.
+Benefit of Branches: This strategy allowed us to work on separate features without causing conflicts or bugs in the main application, ensuring smoother integration.
+
+Part 4: Reflective Practice
+Collaboration Reflection: Throughout the project, we communicated closely to make sure everyone was on the same page. Our initial planning session on 2024-09-17 was crucial in dividing tasks and setting realistic deadlines. This allowed us to keep the project on track, even when we faced challenges with Docker and database integration.
+Improvement Opportunities: One area we could improve is the frequency of our team check-ins. While we all committed regularly, we realized that more frequent updates on Slack could have helped avoid some of the integration issues that we encountered later on.
+Configuration Management Reflection: Our use of Git and Docker ensured that we had consistent and reproducible environments. By learning Docker Compose, we streamlined the deployment process across all team members' machines.
