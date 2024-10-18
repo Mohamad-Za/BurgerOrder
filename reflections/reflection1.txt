@@ -1,21 +1,36 @@
-Reflection 1
+Assignment 1: Collaboration and Configuration Management
+Introduktion
+Today, we divided the work among ourselves and carefully reviewed the assignments to ensure everyone was on the same page. 
+We spent time reading the instructions and discussing them to clarify any uncertainties. Everyone received a clear task,
+and we distributed the workload fairly and efficiently. The goal was to ensure that we all understood what needed to be 
+done and could proceed with a clear picture of our respective responsibilities.
 
-Part 1: Regular Contributions
-Team Engagement: During the initial phase of the project, each team member was actively involved in contributing. We ensured that more than 40% of the team members made multiple commits as we progressed through each task.
-Contribution Example: On 2024-09-25, each team member made their first commit to the project. This was the start of our version control process using GitHub. We ensured that each section of the project was covered, from backend development to UI adjustments.
-Collaboration Strategy: We divided the tasks to ensure that everyone contributed to different parts of the project, from setting up the database to building the frontend views.
+Inledande
+Cloning via GitHub turned out to be the simplest way for us to share the project smoothly. We tried using the 
+"fork" function initially, but found it involved unnecessary extra work. Since we didn’t need that particular 
+function for our repository management, we decided that cloning was a better and more efficient solution for 
+our workflow.
 
-Part 2: Well Described Commits
-Commit Descriptions: We placed emphasis on writing clear and descriptive commit messages to make our version control process more transparent. This allowed us to keep track of changes efficiently.
-Commit Example: On 2024-09-28, I pushed the changes for the kitchen view. My commit message was "Delade upp Kitchen View i en separat applikation och skapade index.js", which clearly describes the work I completed.
-Commit Process: I followed a structured approach for commits, including adding files to staging with git add ., writing meaningful messages with git commit -m, and pushing changes to the remote repository using git push. This ensured every change was documented and easy to understand.
+Inledande 2
+We began working on the project and discussed how best to divide the work among us. We focused on finding a 
+structure that makes it easier for everyone to contribute and keep the project organized.
 
-Part 3: Branches
-Branch Usage: While working on the project, we utilized branches to manage different parts of the application. For example, I created a feature branch specifically for the development of the kitchen view.
-Branching Example: I created the branch feature/kitchen-view to isolate the work on the kitchen interface without affecting the main codebase. After completing the feature, I merged it back into the main branch using git merge.
-Benefit of Branches: This strategy allowed us to work on separate features without causing conflicts or bugs in the main application, ensuring smoother integration.
+Commits
+Today, we made our first commits to GitHub, marking the start of our collaborative work on the project. 
+It felt great to see our first changes uploaded and integrated into the repository.
 
-Part 4: Reflective Practice
-Collaboration Reflection: Throughout the project, we communicated closely to make sure everyone was on the same page. Our initial planning session on 2024-09-17 was crucial in dividing tasks and setting realistic deadlines. This allowed us to keep the project on track, even when we faced challenges with Docker and database integration.
-Improvement Opportunities: One area we could improve is the frequency of our team check-ins. While we all committed regularly, we realized that more frequent updates on Slack could have helped avoid some of the integration issues that we encountered later on.
-Configuration Management Reflection: Our use of Git and Docker ensured that we had consistent and reproducible environments. By learning Docker Compose, we streamlined the deployment process across all team members' machines.
+Kitchen View
+After speaking with Mikael and receiving feedback, we decided to separate Kitchen View into a standalone 
+application and created a new index.js file for it. After finishing the split, we committed the following:
+
+git add .
+git commit -m "Separated Kitchen View into a standalone application and created index.js"
+git push
+git pull (so that everyone stayed in sync)
+(2024-09-28 / Menu View)
+Similarly, we created the Menu View as a standalone application. We created menu.js and then committed the changes:
+
+git add .
+git commit -m "Separated Menu View into a standalone application and created menu.js"
+git push
+git pull
