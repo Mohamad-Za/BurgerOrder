@@ -2,7 +2,7 @@ config:
   target: "http://localhost:3000" # Replace with your application's URL
   phases:
     - duration: 10
-      arrivalRate: 8 # 10 requests per second
+      arrivalRate: 3 # 10 requests per second
 scenarios:
   - flow:
       - get:

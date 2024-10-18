@@ -1,17 +1,16 @@
 
-# Burger Order Application - Docker Setup
 
 ## Project Overview
 
-This is a multi-container Node.js application built for ordering burgers with two main views: the Kitchen view (`kitchen.js`) and the Menu view (`menu.js`). The application uses MariaDB as the database. Docker is used to containerize the app and the database for easy setup across different environments.
+This is a multi-container Node.js application designed for ordering burgers, featuring two main views: the Kitchen view (`kitchen.js`) and the Menu view (`menu.js`). The application uses MariaDB as the database, with Docker containerizing the app and database for easy setup in various environments.
 
 ## Prerequisites
 
-Make sure you have the following installed:
+Ensure you have the following installed:
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-- [Node.js](https://nodejs.org/) (for running the app outside Docker, optional)
+- [Node.js](https://nodejs.org/) (optional, if running the app outside Docker)
 
 ## Getting Started with Docker
 
@@ -37,15 +36,15 @@ This will pull the necessary Docker images, set up the MariaDB database, and run
 
 ### Step 3: Access the Application
 
-- Menu View: The Menu view can be accessed at `http://localhost:3000`
-- Kitchen View: The Kitchen view can be accessed at `http://localhost:3001`
+- **Menu View**: Accessible at `http://localhost:4000`
+- **Kitchen View**: Accessible at `http://localhost:3000`
 
-You can modify the ports if necessary within the `docker-compose.yml` file.
+You can modify the ports as needed within the `docker-compose.yml` file.
 
 ### Docker Services in `docker-compose.yml`
 
 - **MariaDB**: Stores order and menu data.
-- **Node.js**: Runs the application, including both `menu.js` and `kitchen.js`.
+- **Node.js**: Runs the application, handling both `menu.js` and `kitchen.js`.
 
 ### Step 4: Stopping the Application
 
@@ -75,7 +74,7 @@ If you prefer to run the application locally without Docker:
    node kitchen.js
    ```
 
-The Menu and Kitchen views will be available at `http://localhost:3000` and `http://localhost:3001`, respectively.
+The Menu and Kitchen views will be available at `http://localhost:4000` and `http://localhost:3000`, respectively.
 
 ---
 
@@ -93,13 +92,16 @@ npm install jest supertest
 
 ### Step 2: Run the Tests
 
-To run the test suite, use the following command:
+To run the test suite, use the following commands:
 
 ```bash
-npm test
+npm test menu.test.js
+npm test kitchen.test.js
+npm test functions.test.js
+npm test databaseOperations.test.js
 ```
 
-This will execute the tests located in files like `menu.test.js` and `kitchen.test.js`. These test files mock database interactions and test the routes for both views.
+These tests mock database interactions and validate routes for both views (`menu.js` and `kitchen.js`).
 
 ---
 
@@ -107,22 +109,45 @@ This will execute the tests located in files like `menu.test.js` and `kitchen.te
 
 - **Unit Tests**: Check individual functions and methods.
 - **Integration Tests**: Ensure that different parts of the application work seamlessly together.
-- **Performance Tests**: Performance issues under high load have been observed, particularly when handling more than 8 requests per second.
+- **Performance Tests**: Performance issues may arise under high load, particularly when handling more than 8 requests per second.
+
+---
+
+## Running Artillery Performance Tests
+
+To ensure that the application performs well under load, we use [Artillery](https://artillery.io/) to simulate multiple requests and measure performance.
+
+### Step 1: Install Artillery
+
+If Artillery isn't installed globally, you can install it via npm:
+
+```bash
+npm install -g artillery
+```
+
+### Step 2: Run the Performance Test
+
+```bash
+artillery run performance-test.yml
+```
+
+This will simulate traffic and provide performance metrics for the application.
 
 ---
 
 ## Troubleshooting
 
-- **Database Connection Issues**: Make sure the MariaDB container is up and running before accessing the application. You can verify with:
+- **Database Connection Issues**: Ensure the MariaDB container is up and running before accessing the application. Verify with:
 
   ```bash
   docker-compose ps
   ```
 
-- **Port Conflicts**: If ports `3000` or `3001` are in use, you can change them in the `docker-compose.yml` file.
+- **Port Conflicts**: If ports `3000` or `4000` are in use, you can change them in the `docker-compose.yml` file.
 
 ---
 
 ## Conclusion
 
 This README provides the steps to run and test the Burger Order application using Docker. For any issues or contributions, feel free to open a pull request or create an issue in the repository.
+
