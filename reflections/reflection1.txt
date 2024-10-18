@@ -1,36 +1,31 @@
 Project and Collaboration
 
-Group Members: Senai, Khaled, Mohamad, Neron, Stefan
+Group Members: Senai, Khaled, Mohamad, Neron, Stefan  
 Link to GitHub Project: [https://github.com/Mohamad-Za/BurgerOrder]
 
-Configuration Management:
-Configuration management is a process for tracking changes in a project and ensuring that all components work together seamlessly. We used Git to manage versions of our code, making teamwork more efficient. With Git, we could track changes and roll back if something went wrong.
+Configuration Management:  
+Configuration management is a process for tracking changes in a project and ensuring that all components work 
+together seamlessly. We used Git to manage versions of our code, making teamwork more efficient. With Git, 
+we could track changes and roll back if something went wrong.
 
-Git Workflow:
+Git Workflow:  
 Our Git workflow included the following steps:
 
-Cloning the project using git clone, which we found to be the simplest and most efficient method for sharing the project.
-Creating new branches for different features with git checkout -b.
-Making changes and adding them with git add and git commit.
-Pushing changes to the remote server with git push.
-Creating pull requests for review and merging.
-Pulling the latest changes from the main branch with git pull.
-We initially considered using the "fork" function but found that it added unnecessary steps for our project setup, so we decided to stick with cloning for better workflow management.
+- Cloning the project using `git clone`.
+- Creating new branches for different features with `git checkout -b`.
+- Making changes and adding them with `git add` and `git commit`.
+- Pushing changes to the remote server with `git push`.
+- Creating pull requests for review and merging.
+- Pulling the latest changes from the main branch with `git pull`.
 
-Experiences with Configuration Management:
+Experiences with Configuration Management:  
+Positive: Git helped us organize our changes and avoid conflicts while working in parallel.  
+Challenges: We encountered issues with merge conflicts, especially when multiple members worked on the same files.  
+Solutions: We resolved conflicts manually by reviewing and selecting the appropriate versions. 
+Improved communication could have helped us avoid these conflicts.
 
-Positive: Git helped us organize our changes and avoid conflicts while working in parallel. We made our first commits, which marked the start of our collaborative work and felt rewarding as we saw our progress integrated into the repository.
-Challenges: We encountered issues with merge conflicts, especially when multiple members worked on the same files.
-Solutions: We resolved conflicts manually by reviewing and selecting the appropriate versions. Improved communication could have helped us avoid these conflicts.
-Additional Project Work:
-After receiving feedback from Mikael, we decided to split the "Kitchen View" into a standalone application. We created a new index.js file for this view, committed the changes, and ensured everyone stayed in sync by pulling the latest changes. Similarly, we separated the "Menu View" into its own application by creating a menu.js file and followed the same Git process:
-
-sql
-Copy code
-git add .
-git commit -m "Separated Kitchen View into a standalone application and created index.js"
-git push
-git pull
-What We Did During Submission Assignment 1: Collaboration and Configuration Management:
-We set up a Git repository for the project and chose our development environments. We collaborated effectively, using Git for version control. Our progress was documented in engineering diaries, noting what we learned, which Git commands we used, and the challenges we faced. We made regular commits and worked in different branches to maintain organization and facilitate collaboration throughout the project.
-
+What We Did During Submission Assignment 1: Collaboration and Configuration Management:  
+We set up a Git repository for the project and chose our development environments. We collaborated effectively, 
+using Git for version control. Our progress was documented in engineering diaries, noting what we learned, 
+which Git commands we used, and the challenges we faced. We made regular commits and worked in different branches 
+to maintain organization and facilitate collaboration throughout the project.

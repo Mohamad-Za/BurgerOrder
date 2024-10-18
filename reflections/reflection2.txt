@@ -1,34 +1,14 @@
-Reflection 2
-Part 1: Documented Code
-Commenting Code and Docker Containers: Throughout this phase of the project, I focused on ensuring that the code was well-documented, particularly in the parts that set up and handle Docker containers. This involved adding clear comments to each container's configuration file to describe what each service does.
-Example: The Dockerfile for the Kitchen View contains comments that explain the base image used, the environment variables required for setup, and the command that runs the application. In particular:
-bash
-Kopiera kod
-# Using Node.js as the base image
-FROM node:14
+Submission Assignment 2: Implementation and Documentation
 
-# Install dependencies
-RUN npm install
+For our second assignment, we have successfully developed two main components: the BurgerOrderer, which serves 
+as the web interface where customers can order and customize burgers, and the KitchenView, which acts as the 
+kitchen display where staff can see incoming orders. 
 
-# Expose the application on port 3000
-EXPOSE 3000
+To ensure a smooth deployment and operation of our application, we created Docker containers for all app 
+components, including BurgerOrderer, KitchenView, and the MenuStore database. We also documented and automated 
+the process for building and running these containers, making it easier for others to replicate our setup.
 
-# Run the application
-CMD ["npm", "start"]
-Method Documentation: I also made sure that key functions in the menu.js and kitchen.js files were documented. For example, I added comments to explain how the getOrders() function retrieves data from the PostgreSQL database and displays the kitchen orders.
-Part 2: Documented Startup
-Startup Instructions: I created a clear set of instructions in the project's README file, ensuring that any developer or user could run the project with a single command. The documentation includes both the prerequisites (such as Docker and Node.js installation) and the startup command.
-Example: The project can be started with the command:
-bash
-Kopiera kod
-docker-compose up -d
-Details Provided: The README includes a description of what this command does—spinning up the containers for both the Kitchen and Menu views, along with the PostgreSQL database. I also included instructions on how to access the services in a browser by visiting localhost:3000 for the Kitchen View and localhost:4000 for the Menu View.
-Part 3: Implemented Functionality
-Key Features Implemented: All planned features for this phase were successfully implemented. These included the ability to view orders, add new orders, and mark orders as completed in the kitchen.
-Feature Example: I implemented the Order Processing feature, allowing kitchen staff to view incoming orders in real-time. The integration with WebSockets enables the system to update automatically when new orders are added.
-Testing the Functionality: To ensure everything worked as expected, I wrote test cases for each feature using Jest. The tests cover routes for retrieving, creating, and deleting orders.
-Part 4: Reflective Practice
-Reflecting on Implementation: The documentation process helped me better understand the complexity of Docker and container orchestration. By documenting the container setup and application flow, I learned how to explain technical processes in a way that makes them accessible to others.
-Challenges Faced: One challenge was ensuring that the startup process worked seamlessly on different operating systems (Windows, macOS, Linux). I documented solutions for common errors and issues that might arise during setup.
-Improvements Identified: While most features were implemented smoothly, I realized that the order processing system could be optimized further for scalability. In future iterations, I would explore asynchronous processing and message queues to handle a higher volume of orders efficiently.
-Team Collaboration: During this phase, the team worked closely to test the functionality across different machines. This collaboration ensured that we caught bugs early and improved the overall user experience.
+Furthermore, we have been diligently updating our engineer’s diaries to reflect on our learning experiences 
+and the implementation of the project. To facilitate collaboration and make it easier for others to contribute, 
+we have created a README file that provides clear instructions for downloading and running the project. 
+This will help others understand the project's structure and how to get it up and running on their own systems.
