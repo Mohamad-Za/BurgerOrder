@@ -1,0 +1,22 @@
+Reflection 2
+Part 1: Introduction/Initial Thoughts
+Continuation and Adjustments: In this section, explain how you moved on from the previous phase. Did you make any adjustments based on earlier challenges? What were your new goals?
+
+Example: "After setting up the basic database connection, my next task was to implement a way for orders to be displayed and removed from the system. I felt more confident after resolving the initial Docker issues, but I anticipated challenges in optimizing database queries for real-time updates."
+Feedback and Planning: If you received feedback or advice at this point, explain how that influenced your work moving forward.
+
+Example: "Based on feedback from my teammates, I realized that the user interface for displaying orders needed improvement. We decided to create a more interactive dashboard using WebSockets for real-time order updates."
+Part 2: Development/Process
+Key Developments: Describe the key tasks or features you worked on during this phase. How did you approach each task, and what tools or methods did you use?
+
+Example: "To implement real-time updates, I introduced WebSockets into the application. This was new to me, so I spent time learning how to integrate it with the existing framework. I also improved the efficiency of database queries by adding indexes to the most frequently accessed tables."
+Challenges and Solutions: Again, discuss any difficulties you faced and how you resolved them. What did you learn from these challenges?
+
+Example: "Initially, setting up WebSockets was confusing, especially ensuring that it worked correctly alongside our Docker containers. After troubleshooting connection issues, I discovered that the WebSocket server was not exposed in the Docker network. Configuring the correct port mapping solved this problem."
+Part 3: Conclusion/Outcome
+Achievements: Summarize the major accomplishments of this phase. What was the state of the project after this phase of work?
+
+Example: "By the end of this phase, I had successfully implemented real-time updates, allowing the kitchen staff to view incoming orders without needing to refresh the page. This was a big step forward for improving the user experience."
+Learning Reflection: Reflect on the learning process during this phase. What new skills or knowledge did you acquire?
+
+Example: "Through this experience, I became more proficient in using WebSockets and gained a much better understanding of how to manage real-time data in a web application."
