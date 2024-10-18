@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 Testing with jest:
 During the process of building the test files, I encountered an error. Sometimes, I write tests that expect certain outcomes based on other factors, such as after creating an order.
 In one instance, I wrote a test expecting a specific result without actually making an order first.
