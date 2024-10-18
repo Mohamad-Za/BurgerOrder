@@ -1,21 +1,31 @@
-Reflection 1
+Project and Collaboration
 
-Part 1: Regular Contributions
-Team Engagement: During the initial phase of the project, each team member was actively involved in contributing. We ensured that more than 40% of the team members made multiple commits as we progressed through each task.
-Contribution Example: On 2024-09-25, each team member made their first commit to the project. This was the start of our version control process using GitHub. We ensured that each section of the project was covered, from backend development to UI adjustments.
-Collaboration Strategy: We divided the tasks to ensure that everyone contributed to different parts of the project, from setting up the database to building the frontend views.
+Group Members: Senai, Khaled, Mohamad, Neron, Stefan  
+Link to GitHub Project: [https://github.com/Mohamad-Za/BurgerOrder]
 
-Part 2: Well Described Commits
-Commit Descriptions: We placed emphasis on writing clear and descriptive commit messages to make our version control process more transparent. This allowed us to keep track of changes efficiently.
-Commit Example: On 2024-09-28, I pushed the changes for the kitchen view. My commit message was "Delade upp Kitchen View i en separat applikation och skapade index.js", which clearly describes the work I completed.
-Commit Process: I followed a structured approach for commits, including adding files to staging with git add ., writing meaningful messages with git commit -m, and pushing changes to the remote repository using git push. This ensured every change was documented and easy to understand.
+Configuration Management:  
+Configuration management is a process for tracking changes in a project and ensuring that all components work 
+together seamlessly. We used Git to manage versions of our code, making teamwork more efficient. With Git, 
+we could track changes and roll back if something went wrong.
 
-Part 3: Branches
-Branch Usage: While working on the project, we utilized branches to manage different parts of the application. For example, I created a feature branch specifically for the development of the kitchen view.
-Branching Example: I created the branch feature/kitchen-view to isolate the work on the kitchen interface without affecting the main codebase. After completing the feature, I merged it back into the main branch using git merge.
-Benefit of Branches: This strategy allowed us to work on separate features without causing conflicts or bugs in the main application, ensuring smoother integration.
+Git Workflow:  
+Our Git workflow included the following steps:
 
-Part 4: Reflective Practice
-Collaboration Reflection: Throughout the project, we communicated closely to make sure everyone was on the same page. Our initial planning session on 2024-09-17 was crucial in dividing tasks and setting realistic deadlines. This allowed us to keep the project on track, even when we faced challenges with Docker and database integration.
-Improvement Opportunities: One area we could improve is the frequency of our team check-ins. While we all committed regularly, we realized that more frequent updates on Slack could have helped avoid some of the integration issues that we encountered later on.
-Configuration Management Reflection: Our use of Git and Docker ensured that we had consistent and reproducible environments. By learning Docker Compose, we streamlined the deployment process across all team members' machines.
+- Cloning the project using `git clone`.
+- Creating new branches for different features with `git checkout -b`.
+- Making changes and adding them with `git add` and `git commit`.
+- Pushing changes to the remote server with `git push`.
+- Creating pull requests for review and merging.
+- Pulling the latest changes from the main branch with `git pull`.
+
+Experiences with Configuration Management:  
+Positive: Git helped us organize our changes and avoid conflicts while working in parallel.  
+Challenges: We encountered issues with merge conflicts, especially when multiple members worked on the same files.  
+Solutions: We resolved conflicts manually by reviewing and selecting the appropriate versions. 
+Improved communication could have helped us avoid these conflicts.
+
+What We Did During Submission Assignment 1: Collaboration and Configuration Management:  
+We set up a Git repository for the project and chose our development environments. We collaborated effectively, 
+using Git for version control. Our progress was documented in engineering diaries, noting what we learned, 
+which Git commands we used, and the challenges we faced. We made regular commits and worked in different branches 
+to maintain organization and facilitate collaboration throughout the project.
