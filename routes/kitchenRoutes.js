@@ -10,10 +10,10 @@ router.get('/about', (req, res, next) => {
         
         data.team = [
             { name: "Mohamad Zahedi", githubUrl: "https://github.com/Mohamad-Za", avatarUrl: "https://github.com/Mohamad-Za.png" },
-            { name: "Member 2", githubUrl: "https://github.com/member2-profile", avatarUrl: "https://github.com/member2-profile.png" },
-            { name: "Member 3", githubUrl: "https://github.com/member3-profile", avatarUrl: "https://github.com/member3-profile.png" },
-            { name: "Member 4", githubUrl: "https://github.com/member4-profile", avatarUrl: "https://github.com/member4-profile.png" },
-            { name: "Member 5", githubUrl: "https://github.com/member5-profile", avatarUrl: "https://github.com/member5-profile.png" }
+            { name: "Senai Ammanuel tewoldmedhin", githubUrl: "https://github.com/amanuelsen", avatarUrl: "https://github.com/amanuelsen.png" },
+            { name: "Khaled Mkahala", githubUrl: "https://github.com/KokoobiGO", avatarUrl: "https://github.com/KokoobiGO.png" },
+            { name: "Stefan Crnobrnja", githubUrl: "https://github.com/MilosObelic", avatarUrl: "https://github.com/MilosObelic.png" },
+            { name: "Neron Haxhiu", githubUrl: "https://github.com/NeronHaxhiu", avatarUrl: "https://github.com/NeronHaxhiu.png" }
         ];
 
         res.render('burger_orderer/pages/about', data);
