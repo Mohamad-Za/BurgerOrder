@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("../config/db/burger_orderer.json");
+const config = require("../config/db/config.js");
 const mysql = require("promise-mysql");
 
 async function showBurgers() {

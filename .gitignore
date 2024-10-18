@@ -9,8 +9,7 @@ logs
 *.log
 npm-debug.log*
 
-# Environment variables
-.env
+
 
 # Docker-related files
 

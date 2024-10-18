@@ -5,8 +5,8 @@ services:
     container_name: burger_mariadb
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: dbadm
-      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_USER: senai-amn
+      MYSQL_PASSWORD: your_password
       MYSQL_DATABASE: burger_orderer
     ports:
       - "3306:3306"
@@ -20,9 +20,10 @@ services:
       context: .
     container_name: kitchen_service
     environment:
+      NODE_ENV: docker
       DB_HOST: mariadb
-      DB_USER: dbadm
-      DB_PASSWORD: P@ssw0rd
+      DB_USER: senai-amn
+      DB_PASSWORD: your_password
       DB_NAME: burger_orderer
     ports:
       - "3000:3000"
@@ -35,9 +36,10 @@ services:
       context: .
     container_name: menu_service
     environment:
+      NODE_ENV: docker
       DB_HOST: mariadb
-      DB_USER: dbadm
-      DB_PASSWORD: P@ssw0rd
+      DB_USER: senai-amn
+      DB_PASSWORD: your_password
       DB_NAME: burger_orderer
     ports:
       - "4000:4000"

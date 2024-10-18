@@ -1,14 +1,18 @@
 {
-    "name": "eshop1",
+    "name": "burger",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:local": "cross-env NODE_ENV=local node menu.js",
+    "start:docker": "cross-env NODE_ENV=docker node menu.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.4.5",
         "ejs": "^3.1.10",
         "express": "^4.21.0",
         "mariadb": "^3.3.2",

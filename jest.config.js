@@ -4,4 +4,5 @@ module.exports = {
       '^.+\\.js$': 'babel-jest',
   },
   transformIgnorePatterns: ['/node_modules/'],
+  testMatch: ['**/testing/**/*.test.js'], 
 };

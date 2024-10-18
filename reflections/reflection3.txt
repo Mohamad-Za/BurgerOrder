@@ -2,6 +2,12 @@ Testing with jest:
 During the process of building the test files, I encountered an error. Sometimes, I write tests that expect certain outcomes based on other factors, such as after creating an order.
 In one instance, I wrote a test expecting a specific result without actually making an order first.
 Later, I realized this mistake and fixed it.
+Summary
+Database Operations: Test all CRUD operations and edge cases.
+API Endpoints: Test all endpoints and error handling.
+Integration Tests: Ensure different parts of your application work together.
+Unit Tests: Test individual functions and methods in isolation.
+Performance Tests: Ensure your application can handle a high load.
 
 Docker:
 It took us some time to set up the Docker Compose file, primarily due to challenges with integrating the MariaDB database. We struggled to understand how to properly containerize our application alongside the database, which caused delays in the process.
