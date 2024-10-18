@@ -3,7 +3,7 @@ Testing with jest:
 During the process of building the test files, I encountered an error. Sometimes, I write tests that expect certain outcomes based on other factors, such as after creating an order.
 In one instance, I wrote a test expecting a specific result without actually making an order first.
 Later, I realized this mistake and fixed it.
-Summary
+Summary of the tes
 Database Operations: Test all CRUD operations and edge cases.
 API Endpoints: Test all endpoints and error handling.
 Integration Tests: Ensure different parts of your application work together.
@@ -12,6 +12,7 @@ Performance Tests: Ensure your application can handle a high load.
 
 Docker:
 It took us some time to set up the Docker Compose file, primarily due to challenges with integrating the MariaDB database. We struggled to understand how to properly containerize our application alongside the database, which caused delays in the process.
+<<<<<<< Updated upstream
 =======
 Reflection 3
 Part 1: Introduction/Initial Thoughts
@@ -35,4 +36,10 @@ Example: "Overall, the project met all the key objectives we set out to achieve.
 Final Reflection and Learning: Look back at the project as a whole. What were the key takeaways from this project? How have you grown or improved as a developer through this experience?
 
 Example: "Looking back, this project was a significant learning experience for me, particularly in the areas of containerization, real-time web applications, and database optimization. I feel much more confident in these areas and look forward to applying these skills in future projects."
+>>>>>>> Stashed changes
+=======
+
+Debugging: Throughout the process of creating the tests, I encountered numerous errors and unexpected outcomes. For instance, in the Jest test file, I was expecting certain outputs that my application wasn’t actually sending or rendering at times.
+These discrepancies caused the tests to fail. However, by utilizing debugging techniques and strategically placing console logs, I was able to pinpoint where the issues originated.
+Through this methodical approach, I identified and corrected the problems, ensuring that my tests accurately reflected the application's behavior.
 >>>>>>> Stashed changes
