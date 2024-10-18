@@ -1,36 +1,36 @@
-Assignment 1: Collaboration and Configuration Management
-Introduktion
-Today, we divided the work among ourselves and carefully reviewed the assignments to ensure everyone was on the same page. 
-We spent time reading the instructions and discussing them to clarify any uncertainties. Everyone received a clear task,
-and we distributed the workload fairly and efficiently. The goal was to ensure that we all understood what needed to be 
-done and could proceed with a clear picture of our respective responsibilities.
+Project and Collaboration
 
-Inledande
-Cloning via GitHub turned out to be the simplest way for us to share the project smoothly. We tried using the 
-"fork" function initially, but found it involved unnecessary extra work. Since we didn’t need that particular 
-function for our repository management, we decided that cloning was a better and more efficient solution for 
-our workflow.
+Group Members: Senai, Khaled, Mohamad, Neron, Stefan
+Link to GitHub Project: [https://github.com/Mohamad-Za/BurgerOrder]
 
-Inledande 2
-We began working on the project and discussed how best to divide the work among us. We focused on finding a 
-structure that makes it easier for everyone to contribute and keep the project organized.
+Configuration Management:
+Configuration management is a process for tracking changes in a project and ensuring that all components work together seamlessly. We used Git to manage versions of our code, making teamwork more efficient. With Git, we could track changes and roll back if something went wrong.
 
-Commits
-Today, we made our first commits to GitHub, marking the start of our collaborative work on the project. 
-It felt great to see our first changes uploaded and integrated into the repository.
+Git Workflow:
+Our Git workflow included the following steps:
 
-Kitchen View
-After speaking with Mikael and receiving feedback, we decided to separate Kitchen View into a standalone 
-application and created a new index.js file for it. After finishing the split, we committed the following:
+Cloning the project using git clone, which we found to be the simplest and most efficient method for sharing the project.
+Creating new branches for different features with git checkout -b.
+Making changes and adding them with git add and git commit.
+Pushing changes to the remote server with git push.
+Creating pull requests for review and merging.
+Pulling the latest changes from the main branch with git pull.
+We initially considered using the "fork" function but found that it added unnecessary steps for our project setup, so we decided to stick with cloning for better workflow management.
 
+Experiences with Configuration Management:
+
+Positive: Git helped us organize our changes and avoid conflicts while working in parallel. We made our first commits, which marked the start of our collaborative work and felt rewarding as we saw our progress integrated into the repository.
+Challenges: We encountered issues with merge conflicts, especially when multiple members worked on the same files.
+Solutions: We resolved conflicts manually by reviewing and selecting the appropriate versions. Improved communication could have helped us avoid these conflicts.
+Additional Project Work:
+After receiving feedback from Mikael, we decided to split the "Kitchen View" into a standalone application. We created a new index.js file for this view, committed the changes, and ensured everyone stayed in sync by pulling the latest changes. Similarly, we separated the "Menu View" into its own application by creating a menu.js file and followed the same Git process:
+
+sql
+Copy code
 git add .
 git commit -m "Separated Kitchen View into a standalone application and created index.js"
 git push
-git pull (so that everyone stayed in sync)
-(2024-09-28 / Menu View)
-Similarly, we created the Menu View as a standalone application. We created menu.js and then committed the changes:
-
-git add .
-git commit -m "Separated Menu View into a standalone application and created menu.js"
-git push
 git pull
+What We Did During Submission Assignment 1: Collaboration and Configuration Management:
+We set up a Git repository for the project and chose our development environments. We collaborated effectively, using Git for version control. Our progress was documented in engineering diaries, noting what we learned, which Git commands we used, and the challenges we faced. We made regular commits and worked in different branches to maintain organization and facilitate collaboration throughout the project.
+
