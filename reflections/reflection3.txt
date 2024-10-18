@@ -11,34 +11,8 @@ Performance Tests: Ensure your application can handle a high load.
 
 Docker:
 It took us some time to set up the Docker Compose file, primarily due to challenges with integrating the MariaDB database. We struggled to understand how to properly containerize our application alongside the database, which caused delays in the process.
-<<<<<<< Updated upstream
-=======
-Reflection 3
-Part 1: Introduction/Initial Thoughts
-Final Steps and Goals: Introduce the final phase of the project. What were the last tasks you needed to complete? Were there any high-level goals for wrapping things up?
 
-Example: "As we approached the final phase, our goal was to clean up the codebase and ensure all parts of the application were functioning correctly. We also wanted to improve testing coverage for both the frontend and backend."
-Plans for Completion: Describe your strategy for completing the project. Did you have any concerns or areas you wanted to pay special attention to?
-
-Example: "My plan was to first fix some known bugs in the order processing system. Additionally, I wanted to ensure that all code was properly documented so that future developers could easily understand and maintain the system."
-Part 2: Development/Process
-Final Tasks: Break down the specific tasks you worked on during this final phase. This might include debugging, optimization, testing, or preparing the project for deployment.
-
-Example: "I spent a significant amount of time debugging issues related to the order cancellation feature. The problem stemmed from race conditions in the code, where two users could try to cancel the same order simultaneously. I fixed this by adding locks to critical sections of the code."
-Last-Minute Challenges: Reflect on any unexpected challenges that arose towards the end of the project. How did you handle these?
-
-Example: "One last-minute challenge was a performance issue that occurred when the number of orders in the database grew larger than expected. I optimized the query by adding pagination and batching, which significantly improved performance."
-Part 3: Conclusion/Outcome
-Project Wrap-Up: Summarize the overall success of the project. Did you meet your final goals? Were there any parts of the project that exceeded expectations?
-
-Example: "Overall, the project met all the key objectives we set out to achieve. The application is now fully functional, with real-time order updates, and is ready to be deployed in a live environment. Additionally, we were able to exceed our performance targets through efficient database optimization."
-Final Reflection and Learning: Look back at the project as a whole. What were the key takeaways from this project? How have you grown or improved as a developer through this experience?
-
-Example: "Looking back, this project was a significant learning experience for me, particularly in the areas of containerization, real-time web applications, and database optimization. I feel much more confident in these areas and look forward to applying these skills in future projects."
->>>>>>> Stashed changes
-=======
 
 Debugging: Throughout the process of creating the tests, I encountered numerous errors and unexpected outcomes. For instance, in the Jest test file, I was expecting certain outputs that my application wasn’t actually sending or rendering at times.
 These discrepancies caused the tests to fail. However, by utilizing debugging techniques and strategically placing console logs, I was able to pinpoint where the issues originated.
 Through this methodical approach, I identified and corrected the problems, ensuring that my tests accurately reflected the application's behavior.
->>>>>>> Stashed changes
