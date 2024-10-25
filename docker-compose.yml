@@ -1,7 +1,8 @@
 version: '3.9'
+
 services:
   mariadb:
-    image: mariadb:11.5.2
+    image: mariadb:latest
     container_name: burger_mariadb
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -15,25 +16,10 @@ services:
       - ./sql/burger_orderer:/mariadb-scripts
     command: ['mariadbd', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
 
-  kitchen:
+  menu_service:
     build:
       context: .
-    container_name: kitchen_service
-    environment:
-      NODE_ENV: docker
-      DB_HOST: mariadb
-      DB_USER: senai-amn
-      DB_PASSWORD: your_password
-      DB_NAME: burger_orderer
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mariadb
-    command: ["node", "./kitchen.js"]
-
-  menu:
-    build:
-      context: .
+      dockerfile: Dockerfile.menu
     container_name: menu_service
     environment:
       NODE_ENV: docker
@@ -45,4 +31,19 @@ services:
       - "4000:4000"
     depends_on:
       - mariadb
-    command: ["node", "./menu.js"]
+
+  kitchen_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.kitchen
+    container_name: kitchen_service
+    environment:
+      NODE_ENV: docker
+      DB_HOST: mariadb
+      DB_USER: senai-amn
+      DB_PASSWORD: your_password
+      DB_NAME: burger_orderer
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mariadb

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cli = require('../src/cli');
+const cli = require('../src/dbConnection.js');
 const app = express();
 
 router.get('/about', (req, res, next) => {
